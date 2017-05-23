@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title></title>
+<meta name="viewport" content="width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1,user-scalable=no" />
+<script src="js/mui.min.js"></script>
+<link href="css/mui.min.css" rel="stylesheet"/>
+<style type="text/css">
+	.mui-table-view li{
+		background: #fff;margin-bottom: 5px;
+	}
+</style>
+</head>
+<body>
+	<header class="mui-bar mui-bar-nav" style="background: #e8374b; ">
+	    <a class="mui-action-back mui-icon mui-icon-left-nav mui-pull-left" style="color:#fff"></a>
+	    <h1 class="mui-title" style="color:#fff">消息中心</h1>
+	</header>
+	<div class="mui-content" >
+	    <ul class="mui-table-view" style="background: #f1f1f1;">
+		    <li class="mui-table-view-cell mui-media" style="background: #fff;">
+		        <a href="javascript:;">
+		            <img class="mui-media-object mui-pull-left" src="imgs/n_01.jpg">
+		            <div class="mui-media-body">
+		               零钱淘活动
+		                <p class='mui-ellipsis'>猜拳大乱斗来赢得宝币</p>
+		            </div>
+		        </a>
+		    </li>
+		    <li class="mui-table-view-cell mui-media">
+		        <a href="javascript:;">
+		            <img class="mui-media-object mui-pull-left" src="imgs/n_06.jpg">
+		            <div class="mui-media-body">
+		               物流信息
+		                <p class='mui-ellipsis'>您的物流信息在这里哟~</p>
+		            </div>
+		        </a>
+		    </li>
+		    <li class="mui-table-view-cell mui-media">
+		        <a href="javascript:;">
+		            <img class="mui-media-object mui-pull-left" src="imgs/n_08.jpg">
+		            <div class="mui-media-body">
+		               公告通知
+		                <p class='mui-ellipsis'>活动调整通告</p>
+		            </div>
+		        </a>
+		    </li>
+		    <li class="mui-table-view-cell mui-media">
+		        <a href="javascript:;">
+		            <img class="mui-media-object mui-pull-left" src="imgs/n_10.jpg">
+		            <div class="mui-media-body">
+		               物流消息
+		                <p class='mui-ellipsis'>午休不要忘记来夺宝，惊喜都是在不经意间产生</p>
+		            </div>
+		        </a>
+		    </li>
+		    <li class="mui-table-view-cell mui-media" id="server">
+		        <a href="javascript:;">
+		            <img class="mui-media-object mui-pull-left" src="imgs/n_12.jpg">
+		            <div class="mui-media-body">
+		               在线客服
+		                <p class='mui-ellipsis'>QQ客服咨询，请点击这里</p>
+		            </div>
+		        </a>
+		    </li>
+		</ul>
+	</div>
+</body>
+<script type="text/javascript" src="js/zepto.js"></script>
+<script type="text/javascript">
+	$("#server").on('tap',function(){
+		window.location.href='http://wpa.qq.com/msgrd?v=3&uin=1470992370&site=qq&menu=yes';
+	})
+</script>
+</html>

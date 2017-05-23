@@ -1,0 +1,188 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1,user-scalable=no" />
+<title></title>
+<script src="js/mui.min.js"></script>
+<link href="css/mui.min.css" rel="stylesheet"/>
+<link rel="stylesheet" href="css/iconfont.css" />
+<style type="text/css">
+	
+	.mytop{
+		height: 246px;background:url(imgs/myTopBg.jpg) no-repeat;position: relative;
+		background-size:100%  246px;position: relative;
+	}
+	.mytop button{
+		position: absolute;background: none;border: none;
+		width: 110px;height:50px;padding: 0;
+	}
+	.myBtn1{
+		left:60px;bottom:43px;text-indent: -999999px;
+	}
+	.myBtn2{
+		right:60px;bottom:43px;font-size: 20px;color: #fff;
+		font-family: "微软雅黑";
+	}
+	.myList1 span{
+		float:left;
+	}
+	
+	.myJiu span{
+		font-size: 20px;
+	}
+	.jinbi{
+		color: #ff983b;
+	}
+	.jifen{
+		color: #2c83c6;
+	}
+	.lingqian {
+		color: #e82c4f;
+	}
+	.listImg1{
+		background: url(imgs/01.jpg) no-repeat;height: 24px;width:24px;
+		background-size:cover ;
+	}
+	.listImg2{
+		background: url(imgs/02.jpg) no-repeat;height: 24px;width:24px;
+		background-size:cover ;
+	}
+	.listImg3{
+		background: url(imgs/03.jpg) no-repeat;height: 24px;width:24px;
+		background-size:cover ;
+	}
+	.listImg4{
+		background: url(imgs/04.jpg) no-repeat;height: 24px;width:24px;
+		background-size:cover ;
+	}
+    .myName{
+		font-size: 100px!important;position: absolute;left:50%;margin-left: -50px;top:5px;
+		background:rgba(255,255,255,.3);border-radius: 50%;color:#e7304e;line-height: 100px;
+	}
+	.mytop img{
+		display: block;height: 100px;width: 100px;/*background: #000;*/position:absolute;
+		border-radius: 50%;left:50%;margin-left: -50px;top:5px;border: none;
+	}
+</style>
+</head>
+<body>
+	
+			<!--这里放置真实显示的DOM内容-->
+			<div class="mytop">
+				<button class="myBtn1">免费注册</button>
+				<button class="myBtn2">立即登陆</button>
+				<div class="myName mui-icon mui-icon-contact"></div>
+				<img src="" alt=""  id="myImg"/>
+			</div>
+			<ul class="mui-table-view mui-grid-view mui-grid-9 myJiu" style="background: #fff;margin:3px 0";>
+				<li class="mui-table-view-cell mui-media mui-col-xs-4 mui-col-sm-3">
+				    <a href="#">
+				        <span class="jinbi">0个</span>
+				        <div class="mui-media-body">夺宝币</div>
+				    </a>
+				</li>
+				<li class="mui-table-view-cell mui-media mui-col-xs-4 mui-col-sm-3">
+				    <a href="#">
+				        <span class="jifen">0分</span>
+				        <div class="mui-media-body">积分</div>
+				    </a>
+				</li>
+				<li class="mui-table-view-cell mui-media mui-col-xs-4 mui-col-sm-3">
+				    <a href="#">
+				        <span class="lingqian">0元</span>
+				        <div class="mui-media-body">零钱</div>
+				    </a>
+				</li>
+			</ul>
+	<div class="mui-scroll-wrapper" style="margin-top: 340px;margin-bottom: 50px;">
+		<div class="mui-scroll">
+			<ul class="mui-table-view myList1">
+			    <li class="mui-table-view-cell">
+			    	<span class="mui-icon  listImg1 "></span>
+			        <a class="mui-navigate-right">邀请有礼</a>
+			    </li>
+			    <li class="mui-table-view-cell">
+			    	<span class="mui-icon  listImg2 "></span>
+			        <a class="mui-navigate-right">收货地址</a>
+			    </li>
+			    <li class="mui-table-view-cell">
+			    	<span class="mui-icon  listImg3 "></span>
+			        <a class="mui-navigate-right">我的晒单</a>
+			    </li>
+			    <li class="mui-table-view-cell">
+			    	<span class="mui-icon  listImg4 "></span>
+			        <a class="mui-navigate-right">绑定账号</a>
+			    </li>
+			</ul>
+		</div>
+	</div>
+	<nav class="mui-bar mui-bar-tab">
+	    <a class="mui-tab-item " id="index">
+	        <span class="mui-icon mui-icon-home" ></span>
+	        <span class="mui-tab-label">首页</span>
+	    </a>
+	    <a class="mui-tab-item" id="myNew">
+	        <span class="mui-icon iconfont icon-hahahaha"></span>
+	        <span class="mui-tab-label">最新揭晓</span>
+	    </a>
+	    <a class="mui-tab-item" id="myList">
+	        <span class="mui-icon iconfont icon-tubiao08"></span>
+	        <span class="mui-tab-label">清单</span>
+	    </a>
+	    <a class="mui-tab-item mui-active">
+	        <span class="mui-icon mui-icon-contact"></span>
+	        <span class="mui-tab-label">我的</span>
+	    </a>
+	</nav>
+</body>
+<script type="text/javascript" src="js/zepto.js"></script>
+<script type="text/javascript">
+	 $(".myBtn1").on('tap',function(){
+     	window.location.href='register.html';
+     })
+	 $("#myNew").on('tap',function(){
+     	window.location.href='new.html';
+     })
+	 if(localStorage.getItem('userID')!=null){
+	  		$(".myBtn2").html('退出');
+	  }else{	
+	  	$(".myBtn2").html('立即登陆');
+	  }
+	  $(".myBtn2").on('tap',function(){
+	  	console.log($(".myBtn2").html());
+	  	if($(".myBtn2").html()=='退出'){
+	  		localStorage.removeItem('userID');
+	  		window.location.href='login.html';
+	  	}else{
+	  		window.location.href='login.html';
+	  	}
+     })
+	  $("#index").on('tap',function(){
+     	window.location.href='index.html';
+    })
+	  $("#myList").on('tap',function(){
+	  	
+     	window.location.href='list.html';
+     })
+	mui('.mui-scroll-wrapper').scroll({
+			deceleration: 0.0005 //flick 减速系数，系数越大，滚动速度越慢，滚动距离越小，默认值0.0006
+	});
+	$('#myImg').on('tap',function(){
+		alert(1);
+			var cmr = plus.camera.getCamera();
+			var res = cmr.supportedImageResolutions[0];
+			var fmt = cmr.supportedImageFormats[0];
+			cmr.captureImage( function( path ){
+					var paths=plus.io.convertLocalFileSystemURL(path);
+					$('#myImg')[0].src=paths;
+					
+				},
+				function( error ) {
+					alert( "Capture image failed: " + error.message );
+				},
+				{resolution:res,format:fmt}
+			);
+	})
+</script>
+</html>

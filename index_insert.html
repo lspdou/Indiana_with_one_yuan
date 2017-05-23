@@ -1,0 +1,307 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+	    <meta name="viewport" content="width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1,user-scalable=no" />
+	    <title></title>
+	    <script src="js/mui.min.js"></script>
+	    <link href="css/mui.min.css" rel="stylesheet"/>
+	    <style type="text/css">
+    	.header{
+    		background: #ea374c;
+    	}
+    	.mui-slider-indicator .mui-active.mui-indicator {
+		    background: #268cfa!important;
+		}
+		.img1,.img2,.img3,.img4,.img5,.img6,.img7,.img8{
+			width: 40px;height: 40px;
+		}
+		.img1{
+			background: url(imgs/1.jpg) no-repeat;background-size:cover;
+		}
+		.img2{
+			background: url(imgs/2.jpg) no-repeat;background-size:cover;
+		}
+		.img3{
+			background: url(imgs/3.jpg) no-repeat;background-size:cover;
+		}
+		.img4{
+			background: url(imgs/4.jpg) no-repeat;background-size:cover;
+		}
+		.img5{
+			background: url(imgs/5.jpg) no-repeat;background-size:cover;
+		}
+		.img6{
+			background: url(imgs/6.jpg) no-repeat;background-size:cover;
+		}
+		.img7{
+			background: url(imgs/7.jpg) no-repeat;background-size:cover;
+		}
+		.img8{
+			background: url(imgs/8.jpg) no-repeat;background-size:cover;
+		}
+		.mui-media-body {
+    		font-size: 12px!important;
+    	}
+    	.mui-indicator{
+    		width: 6px!important;height: 6px!important;
+    	}
+    	.mui-grid-9 .img_1{width: 40vw;height: 20vh;}
+		.jindu{display: inline-block;width: 20vw;margin-top: 3vh;position: absolute;top: 2vh;left: 0;height: 3px;}
+		.jindu span{background: #f39800;}
+		.tiao{margin-top: 10px;position: relative;}
+		.Detailed{width: 18vw;height: 5vh;margin-top: 1vh;text-align: center;font: 12px/12px "微软雅黑";float: right;border: #fa787d 1px solid;color: #e8374b;text-indent: -2vw;}
+		.num{font: 12px/14px "微软雅黑";position: absolute;top: 0;left: 0;}
+		.num span{color: #0079fc;}
+		.mui-grid-view.mui-grid-9{background: #fff;}
+    </style>
+	</head>
+	<body>
+		<div id="refreshContainer" class="mui-content mui-scroll-wrapper">
+  			<div class="mui-scroll">
+				<div id="slider" class="mui-slider" >
+					  <div class="mui-slider-group mui-slider-loop">
+					    <!-- 额外增加的一个节点(循环轮播：第一个节点是最后一张轮播) -->
+					    <div class="mui-slider-item mui-slider-item-duplicate">
+					      <a href="#">
+					        <img src="imgs/_5.png">
+					      </a>
+					    </div>
+					    <!-- 第一张 -->
+					    <div class="mui-slider-item">
+					      <a href="#">
+					        <img src="imgs/_1.png">
+					      </a>
+					    </div>
+					    <!-- 第二张 -->
+					    <div class="mui-slider-item">
+					      <a href="#">
+					        <img src="imgs/_2.png">
+					      </a>
+					    </div>
+					    <!-- 第三张 -->
+					    <div class="mui-slider-item">
+					      <a href="#">
+					        <img src="imgs/_3.png">
+					      </a>
+					    </div>
+					    <!-- 第四张 -->
+					    <div class="mui-slider-item">
+					      <a href="#">
+					        <img src="imgs/_4.png">
+					      </a>
+					    </div>
+					    <div class="mui-slider-item">
+					      <a href="#">
+					        <img src="imgs/_5.png">
+					      </a>
+					    </div>
+					   
+					    <!-- 额外增加的一个节点(循环轮播：最后一个节点是第一张轮播) -->
+					    <div class="mui-slider-item mui-slider-item-duplicate">
+					      <a href="#">
+					        <img src="imgs/_1.png">
+					      </a>
+					    </div>
+					  </div>
+					  <div class="mui-slider-indicator">
+					    <div class="mui-indicator mui-active"></div>
+					    <div class="mui-indicator"></div>
+					    <div class="mui-indicator"></div>
+					    <div class="mui-indicator"></div>
+					    <div class="mui-indicator"></div>
+					   
+					  </div>
+					</div>
+				<ul class="mui-table-view mui-grid-view mui-grid-9" style="background: #fff;">
+					<li class="mui-table-view-cell mui-media mui-col-xs-3 mui-col-sm-3">
+					    <a href="#">
+					        <span class="mui-icon  img1 ">
+					        	
+					        </span>
+					        <div class="mui-media-body ">活动</div>
+					    </a>
+					</li>
+					<li class="mui-table-view-cell mui-media mui-col-xs-3 mui-col-sm-3">
+					    <a href="#">
+					    	<span class="mui-icon  img2  "></span>
+					        <div class="mui-media-body">幸运盘</div>
+					    </a>
+					</li>
+					<li class="mui-table-view-cell mui-media mui-col-xs-3 mui-col-sm-3">
+					    <a href="#">
+					        <span class="mui-icon img3 "></span>
+					        <div class="mui-media-body">每日签到</div>
+					    </a>
+					</li>
+					<li class="mui-table-view-cell mui-media mui-col-xs-3 mui-col-sm-3">
+					    <a href="#">
+					        <span class="mui-icon img4 "></span>
+					        <div class="mui-media-body">充值</div>
+					    </a>
+					</li>
+					<li class="mui-table-view-cell mui-media mui-col-xs-3 mui-col-sm-3">
+					    <a href="#">
+					        <span class="mui-icon img5 "></span>
+					        <div class="mui-media-body">新手指南</div>
+					    </a>
+					</li>
+					<li class="mui-table-view-cell mui-media mui-col-xs-3 mui-col-sm-3">
+					    <a href="#">
+					        <span class="mui-icon img6 "></span>
+					        <div class="mui-media-body">牛人榜</div>
+					    </a>
+					</li>
+					<li class="mui-table-view-cell mui-media mui-col-xs-3 mui-col-sm-3">
+					    <a href="#">
+					        <span class="mui-icon img7 "></span>
+					        <div class="mui-media-body">现金红包</div>
+					    </a>
+					</li>
+					<li class="mui-table-view-cell mui-media mui-col-xs-3 mui-col-sm-3">
+					    <a href="#">
+					        <span class="mui-icon img8 "></span>
+					        <div class="mui-media-body">晒单</div>
+					    </a>
+					</li>
+				</ul>
+				<ul class="mui-table-view mui-grid-view mui-grid-9 wode"></ul>
+  			</div>
+		</div>
+	</body>
+	<script type="text/javascript" src="js/zepto-1.1.6.min.js"></script>
+	<script type="text/javascript">
+		var gallery = mui('.mui-slider');
+		gallery.slider({
+		  interval:1000//自动轮播周期，若为0则不自动播放，默认为0；
+		});
+		mui.each(mui(".mui-indicator"),function(index,item){
+			item.addEventListener("tap",function(){
+				gallery.slider().gotoItem(index);
+			})
+		})
+		var ji=1;
+		mui.init({
+	  pullRefresh : {
+	    container:"#refreshContainer",//下拉刷新容器标识，querySelector能定位的css选择器均可，比如：id、.class等
+	    down : {
+	      height:50,//可选,默认50.触发下拉刷新拖动距离,
+	//    auto: true,//可选,默认false.自动下拉刷新一次
+	      contentdown : "下拉可以刷新",//可选，在下拉可刷新状态时，下拉刷新控件上显示的标题内容
+	      contentover : "释放立即刷新",//可选，在释放可刷新状态时，下拉刷新控件上显示的标题内容
+	      contentrefresh : "正在刷新...",//可选，正在刷新状态时，下拉刷新控件上显示的标题内容
+	      callback :function(){
+	      	setTimeout(function(){
+	      		mui('#refreshContainer').pullRefresh().endPulldownToRefresh();
+      		},2000)
+	      } //必选，刷新函数，根据具体业务来编写，比如通过ajax从服务器获取新数据；
+	    },
+	    up : {
+	       height:50,//可选.默认50.触发上拉加载拖动距离
+	//    auto:true,//可选,默认false.自动上拉加载一次
+	      contentrefresh : "正在加载...",//可选，正在加载状态时，上拉加载控件上显示的标题内容
+	      contentnomore:'没有更多数据了',//可选，请求完毕若没有更多数据时显示的提醒内容；
+	      callback :function(){
+      		setTimeout(function(){
+      			var num1=Math.floor(Math.random()*7);
+	      		myajax1(num1,ji);
+	      		console.log(ji);
+	      		ji++;
+	      		add();
+	      		mui('#refreshContainer').pullRefresh().endPullupToRefresh();
+      		},2000)
+	      } //必选，刷新函数，根据具体业务来编写，比如通过ajax从服务器获取新数据；
+	    }
+	  }
+	});
+	
+	
+		var num=Math.floor(Math.random()*7);
+		var arr=[];
+		var arr1=[];
+		var arr2=[];
+		myajax1(num,0);
+		function myajax1(num,flg) {
+				$.ajax({
+					url:"http://datainfo.duapp.com/shopdata/getGoods.php?callback=?",
+					type:"get",
+					dataType:"JSONP",
+					data:{
+						classID:num
+					},
+					success:function(data) {
+						
+//						console.log(data);
+//						console.log(arr);
+						if (data!=0) {
+							var attr='';
+							var aa=0;
+							console.log(data);
+							for (var i = 0; i < data.length; i++) {
+								attr+='<li class="mui-table-view-cell mui-media mui-col-xs-6 mui-col-sm-6"><a href="###"><span class="mui-icon"><img src="'+data[i].goodsListImg+'" class="img_1"/></span><div class="mui-media-body">'+data[i].goodsName+'</div><div class="tiao">';
+								
+								
+								arr.push(Math.floor(Math.random()*101));
+								aa=i+10*flg;
+								
+								attr+='<div class="jindu mui-progressbar jin'+aa+'"><span></span></div><p class="num">开奖进度<span>'+arr[i]+'%</span></p><button class="Detailed" goodsId="'+data[i].goodsID+'" >加入清单</button></div></a></li>';
+								
+							}
+							
+							$(".wode").append(attr);
+							add();
+							
+							$(".Detailed").on("tap",function() {
+								arr1.push($(this).attr('goodsId'));
+								for (var i = 0; i < arr1.length; i++) {
+									if (arr2.indexOf(arr1[i])==-1) {
+										arr2.push(arr1[i]);
+									}
+								}
+//								document.addEventListener( "plusready", function() {
+									var wvB=plus.webview.currentWebview();          //获取当前窗口的WebviewObject对象，即B  
+							        var wvA=wvB.opener();                           //获取当前窗口的创建者，即A  
+							        wvA.evalJS("showAG('"+arr2+"')");        //执行父窗口中的方法  A中的showAG方法  
+//							        wvB.close();
+									
+//									console.log(arr2.length);
+//								}, false );
+								
+							})
+							
+							
+						}else{
+							$(".list_con").html("不好意思！数据丢失了，请访问其他的分类！！！！");
+						}
+						
+							
+					}
+					
+					
+				})
+			}
+		
+		
+		
+		function add() {
+			for (var j = 0; j < mui(".wode li").length; j++) {
+				mui(".jin"+j).progressbar({progress:arr[j%10]}).show();
+			}
+		}
+		
+
+		
+
+		
+		
+//		setTimeout(function() {
+//			var num1=Math.floor(Math.random()*7);
+//			myajax1(num1,1);
+//		},4000)
+		
+		
+//		setTimeout(function() {
+//			add();
+//		},5000)
+</script>
+</html>

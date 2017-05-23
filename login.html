@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1,user-scalable=no" />
+<title></title>
+<script src="js/mui.min.js"></script>
+<link href="css/mui.min.css" rel="stylesheet"/>
+<style type="text/css">
+	.mui-icon-back:before, .mui-icon-left-nav:before {
+	    color: #fff;
+	}
+	body{
+		background: #fff;
+	}
+	.ipt{
+		width: 350px;height: 134px;border: 1px solid #ccc;margin: 0 auto;
+		border-radius: 10px;margin-top: 40px;
+	}
+	.loginName,.loginPwd{
+		overflow: hidden;height:66px;border-bottom: 1px solid #ccc;
+		padding: 13px 10px;
+	}
+	.loginPwd{
+		position: relative;
+	}
+	.forgetPwd{
+		position: absolute;right: 5px;top: 25px;
+	}
+	.loginName span,.loginPwd span{
+		float: left;height:40px;width: 40px;
+		
+	}
+	.loginName span{
+		background: url(imgs/user.jpg) no-repeat;
+	}
+	.loginPwd span{
+		background: url(imgs/pwd.jpg) no-repeat;
+	}
+	.loginName input,.loginPwd input{
+		width:250px;margin-bottom: 0;float: left;border: none;
+	}
+	.loginBtn1{
+		display: block;height: 48px;width:350px;background: #007AFF;
+		border:1px solid #0062CC;margin:0 auto;border-radius: 10px;
+		margin-top: 40px;font:20px/34px "微软雅黑";font-weight: bold;
+	}
+	.loginBtn2{
+		display: block;height: 48px;width:350px;border:1px solid #0062CC;
+		margin:0 auto;border-radius: 10px;margin-top: 10px;font:20px/34px "微软雅黑";
+	}
+</style>
+</head>
+<body>
+	<header class="mui-bar mui-bar-nav" style="background:#ea374c;">
+	    <a class="mui-action-back mui-icon mui-icon-left-nav mui-pull-left"></a>
+	    <h1 class="mui-title" style="color: #fff;">登录</h1>
+	</header>
+	<div class="mui-content" style="background: #fff;">
+		<div class="ipt">
+			<div class="loginName">
+	    	<span></span><input type="text" placeholder="手机号" id='loginName'/>
+		    </div>
+		    <div class="loginPwd">
+		    	<span></span><input type="text" placeholder="账号密码" id="loginPwd"/>
+		    	 <a class="forgetPwd">忘记密码？</a>
+		    </div>
+		</div>
+		<button class="loginBtn1">登录</button>
+		<button class="loginBtn2">通过手机注册</button>
+	    
+	</div>
+</body>
+<script type="text/javascript" src="js/zepto.js"></script>
+<script type="text/javascript">
+	$('.loginBtn1').on('tap',function(){
+		$.ajax({
+			type:"get",
+			url:"  http://datainfo.duapp.com/shopdata/userinfo.php",
+			data:{
+				status:'login',
+				userID:$('#loginName').val(),
+				password:$("#loginPwd").val()
+				},
+			dataType:'json',
+			success:function(data){
+				if(data==0){
+					alert('用户不存在');
+				}else if(data==2){
+					alert('用户密码不符合');
+				}else{
+					console.log('登陆成功');
+					localStorage.setItem('userID',$('#loginName').val());
+					
+					$('#loginName')[0].value='';
+					$("#loginPwd")[0].value='';
+					if(confirm('注册成功，是否跳转至首页')){
+						window.location.href='index.html';
+					}	
+					
+				}
+			}
+		});
+		
+	})
+	$('.loginBtn2').on('tap',function(){
+		window.location.href='register.html';
+	})
+</script>
+</html>

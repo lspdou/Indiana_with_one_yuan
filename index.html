@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1,user-scalable=no" />
+    <title></title>
+    <script src="js/mui.min.js"></script>
+    <link href="css/mui.min.css" rel="stylesheet"/>
+    <link rel="stylesheet" href="css/iconfont.css" />
+    <style type="text/css">
+    	.header{
+    		background: #ea374c;
+    	}
+    	.qingnum{width: 5vw;height: 5vw;background: #f00;display: block;position: absolute;right: 5vw;top: 1vh;border-radius: 50%;color: #fff;text-align: center;font: 4vw/5vw "微软雅黑";}
+    	.mui-tab-item{position: relative;}
+    </style>
+</head>
+<body>
+	<header class="mui-bar mui-bar-nav header">
+		<span class="mui-icon  mui-icon-chat  " id="topLeft" style='color: #fff;'></span>
+	    <h1 class="mui-title" style="color:#fff">零钱淘</h1>
+	    <span class="mui-icon  iconfont icon-saoyisao mui-pull-right " id="topRight" style="color: #fff;"></span>
+	</header>
+	
+	
+	<div class="mui-content">
+	    
+	</div>
+	<nav class="mui-bar mui-bar-tab">
+	    <a class="mui-tab-item mui-active" >
+	        <span class="mui-icon mui-icon-home"></span>
+	        <span class="mui-tab-label">首页</span>
+	    </a>
+	    <a class="mui-tab-item" id='indexNew'>
+	        <span class="mui-icon iconfont icon-hahahaha"></span>
+	        <span class="mui-tab-label">最新揭晓</span>
+	    </a>
+	    <a class="mui-tab-item lit">
+	        <span class="mui-icon iconfont icon-tubiao08"></span>
+	        <span class="mui-tab-label">清单<span class="qingnum">1</span></span>
+	    </a>
+	    <a class="mui-tab-item"  id="my">
+	        <span class="mui-icon mui-icon-contact"></span>
+	        <span class="mui-tab-label">我的</span>
+	    </a>
+	</nav>
+</body>
+<script type="text/javascript" src="js/zepto.js"></script>
+<script type="text/javascript" charset="utf-8">
+
+	document.addEventListener( "plusready", onPlusReady, false );
+
+	function onPlusReady () {
+		 mui('.mui-scroll-wrapper').scroll({
+			deceleration: 0.0005 //flick 减速系数，系数越大，滚动速度越慢，滚动距离越小，默认值0.0006
+		});
+		var gallery = mui('.mui-slider');
+		gallery.slider({
+		  interval:1000//自动轮播周期，若为0则不自动播放，默认为0；
+		});
+		mui.each(mui(".mui-indicator"),function(index,item){
+			item.addEventListener("tap",function(){
+				gallery.slider().gotoItem(index);
+			})
+		})
+		$("#topRight").on('tap',function(){
+			plus.webview.close('index_insert.html');
+		 	window.location.href='code.html';
+		 })
+		
+		$("#topLeft").on('tap',function(){
+	     	plus.webview.close('index_insert.html');
+	     	window.location.href='news.html';
+	     })
+		$("#indexNew").on('tap',function(){
+	     	plus.webview.close('index_insert.html');
+	     	window.location.href='new.html';
+	     })
+	     $("#my").on('tap',function(){
+	     	plus.webview.close('index_insert.html');
+	     	window.location.href='my.html';
+	     })
+	   
+		
+		
+	
+	}
+
+	 
+	mui.init({
+		subpages: [{
+			url: 'index_insert.html', 
+			id: 'index_insert.html',
+			styles: {
+			top: '48px',
+			bottom: '51px',
+			//安卓手机一定要用subpages加载新的页面，还要加上bounce: 'vertical'这一句话，
+			bounce: 'vertical'
+			}
+		}]
+	})
+     
+    function showAG(ag){ 
+    	console.log(ag);
+    	arr=ag;
+        $(".qingnum").html(ag.split(",").length);  
+    } 
+    
+    
+    var arr=[];
+    $(".lit").on("tap",function() {
+		console.log(arr);
+		plus.webview.close('index_insert.html');
+		window.location.href="list.html?goodid="+arr;	
+	});
+	
+	
+	
+</script>
+</html>

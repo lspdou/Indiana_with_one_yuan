@@ -1,0 +1,173 @@
+{
+	"index.html": {
+		"resources": [
+			"js/mui.min.js",
+			"fonts/mui.ttf",
+			"css/mui.min.css",
+			"news.html",
+			"js/zepto.js",
+			"imgs/2.jpg",
+			"imgs/4.jpg",
+			"imgs/_3.png",
+			"imgs/6.jpg",
+			"imgs/1.jpg",
+			"imgs/_4.png",
+			"imgs/_2.png",
+			"imgs/_5.png",
+			"imgs/7.jpg",
+			"imgs/8.jpg",
+			"imgs/_1.png",
+			"imgs/3.jpg",
+			"imgs/5.jpg",
+			"my.html",
+			"code.html",
+			"index_insert.html",
+			"list.html",
+			"css/iconfont.css",
+			"fonts/iconfont.ttf",
+			"new.html"
+		],
+		"refer": [
+			"news.html",
+			"my.html",
+			"code.html",
+			"index_insert.html",
+			"list.html",
+			"new.html"
+		]
+	},
+	"news.html": {
+		"resources": [
+			"index.html",
+			"js/mui.min.js",
+			"fonts/mui.ttf",
+			"css/mui.min.css",
+			"js/zepto.js",
+			"imgs/n_06.jpg",
+			"imgs/n_08.jpg",
+			"imgs/n_10.jpg",
+			"imgs/n_01.jpg",
+			"imgs/n_12.jpg"
+		],
+		"refer": [
+			"index.html"
+		]
+	},
+	"my.html": {
+		"resources": [
+			"imgs/01.jpg",
+			"imgs/07.jpg",
+			"imgs/05.jpg",
+			"imgs/02.jpg",
+			"imgs/04.jpg",
+			"imgs/myTopBg.jpg",
+			"imgs/06.jpg",
+			"imgs/08.jpg",
+			"imgs/03.jpg",
+			"index.html",
+			"js/mui.min.js",
+			"fonts/mui.ttf",
+			"css/mui.min.css",
+			"js/zepto.js",
+			"login.html",
+			"register.html",
+			"list.html",
+			"css/iconfont.css",
+			"fonts/iconfont.ttf"
+		],
+		"refer": [
+			"index.html",
+			"login.html",
+			"register.html",
+			"list.html"
+		]
+	},
+	"login.html": {
+		"resources": [
+			"imgs/pwd.jpg",
+			"my.html",
+			"imgs/user.jpg",
+			"index.html",
+			"css/mui.min.css"
+		],
+		"refer": [
+			"my.html",
+			"index.html"
+		]
+	},
+	"register.html": {
+		"resources": [
+			"my.html",
+			"imgs/register.jpg"
+		],
+		"refer": [
+			"my.html"
+		]
+	},
+	"code.html": {
+		"resources": [
+			"index.html",
+			"js/mui.min.js",
+			"fonts/mui.ttf",
+			"css/mui.min.css",
+			"js/zepto.js"
+		],
+		"refer": [
+			"index.html"
+		]
+	},
+	"index_insert.html": {
+		"resources": [
+			"imgs/2.jpg",
+			"imgs/_2.png",
+			"imgs/4.jpg",
+			"imgs/_5.png",
+			"imgs/7.jpg",
+			"imgs/_3.png",
+			"imgs/8.jpg",
+			"imgs/_1.png",
+			"imgs/6.jpg",
+			"imgs/1.jpg",
+			"imgs/3.jpg",
+			"js/zepto-1.1.6.min.js",
+			"imgs/5.jpg",
+			"imgs/_4.png"
+		]
+	},
+	"list.html": {
+		"resources": [
+			"js/mui.min.js",
+			"fonts/mui.ttf",
+			"css/mui.min.css",
+			"js/zepto.js",
+			"my.html",
+			"index.html",
+			"css/iconfont.css",
+			"fonts/iconfont.ttf",
+			"new.html"
+		],
+		"refer": [
+			"my.html",
+			"index.html",
+			"new.html"
+		]
+	},
+	"new.html": {
+		"resources": [
+			"index.html",
+			"list.html",
+			"my.html",
+			"js/mui.min.js",
+			"fonts/mui.ttf",
+			"css/iconfont.css",
+			"css/mui.min.css",
+			"fonts/iconfont.ttf",
+			"js/zepto-1.1.6.min.js"
+		],
+		"refer": [
+			"index.html",
+			"list.html",
+			"my.html"
+		]
+	}
+}

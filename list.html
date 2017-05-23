@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+	    <meta name="viewport" content="width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1,user-scalable=no" />
+	    <title></title>
+	    <script src="js/mui.min.js"></script>
+	    <link href="css/mui.min.css" rel="stylesheet"/>
+	    <link rel="stylesheet" href="css/iconfont.css" />
+	    <script type="text/javascript" src="js/zepto.js"></script>
+	    <style type="text/css">
+	    	.header{
+	    		background: #ea374c;
+	    	}
+	    	.qingnum{width: 5vw;height: 5vw;background: #f00;display: block;position: absolute;right: 5vw;top: 1vh;border-radius: 50%;color: #fff;text-align: center;font: 4vw/5vw "微软雅黑";}
+	    	.mui-tab-item{position: relative;}
+	    	
+			.surplus{
+				color:#FF5053;
+			}
+			.reduce{
+				height: 30px;width: 30px;background: #F2F2F2;text-align: center;line-height: 30px;display: inline-block;border:1px solid #ccc;
+				border-radius: 5px 0 0 5px;margin-left: 4px;
+			}
+			.add{
+				height: 30px;width: 30px;text-align: center;line-height: 30px;display: inline-block;border:1px solid #ccc;border-radius:  0 5px 5px 0 ;
+			}
+			.number{
+				width: 50px;height: 30px;text-align: center;line-height: 30px;display: inline-block;border-top: 1px solid #ccc;border-bottom: 1px solid #ccc;
+			}
+
+	    </style>
+	</head>
+	<body>
+		
+		<header class="mui-bar mui-bar-nav header">
+			
+		    <h1 class="mui-title" style="color:#fff">清单</h1>
+		</header>
+		
+		<div id="refreshContainer" class="mui-content mui-scroll-wrapper">
+  			<div class="mui-scroll">
+				
+  			</div>
+		</div>
+	    
+	    <nav class="mui-bar mui-bar-tab">
+		    <a class="mui-tab-item " id='listFirst'>
+		        <span class="mui-icon mui-icon-home"></span>
+		        <span class="mui-tab-label">首页</span>
+		    </a>
+		    <a class="mui-tab-item" id="listNew">
+		        <span class="mui-icon iconfont icon-hahahaha"></span>
+		        <span class="mui-tab-label">最新揭晓</span>
+		    </a>
+		    <a class="mui-tab-item mui-active ">
+		        <span class="mui-icon iconfont icon-tubiao08"></span>
+		        <span class="mui-tab-label">清单<span class="qingnum">1</span></span>
+		    </a>
+		    <a class="mui-tab-item"  id="Listmy">
+		        <span class="mui-icon mui-icon-contact"></span>
+		        <span class="mui-tab-label">我的</span>
+		    </a>
+		</nav>
+	</body>
+	<script type="text/javascript">
+		$("#listFirst").on('tap',function(){
+	     	window.location.href='index.html';
+	     })
+		$("#Listmy").on('tap',function(){
+	     	window.location.href='my.html';
+	     })
+		$("#listNew").on('tap',function(){
+	     	window.location.href='new.html';
+	     })
+		mui('.mui-scroll-wrapper').scroll({
+			deceleration: 0.0005 //flick 减速系数，系数越大，滚动速度越慢，滚动距离越小，默认值0.0006
+		});
+		
+		function GetQueryString(name)
+		{
+		     var reg = new RegExp("(^|&)"+ name +"=([^&]*)(&|$)");
+		     var r = window.location.search.substr(1).match(reg);
+		     if(r!=null)return  unescape(r[2]); return null;
+		}
+		
+//		console.log(GetQueryString("goodid").split(",").length);
+		
+		var gd=GetQueryString("goodid").split(",")
+		var qingnum=0;
+		
+		for (var i = 0; i < gd.length; i++) {
+			myajax (gd[i]);
+			qingnum=i;
+			$(".qingnum").html(i+1)
+		}
+		
+		
+		function myajax (gddd) {
+				$.ajax({
+					url:"http://datainfo.duapp.com/shopdata/getGoods.php?callback=?",
+					type:"get",
+					dataType:"JSONP",
+					data:{
+						goodsID:gddd
+					},
+					success:function(data) {
+						
+						console.log(data);
+//						console.log(JSON.parse(data[0].imgsUrl).length);
+						
+						var imgleth=JSON.parse(data[0].imgsUrl).length;
+						
+						if (data!=0) {
+							var attr='';
+							attr+='<ul class="mui-table-view" style="background: #f1f1f1;"><li class="mui-table-view-cell mui-media" style="background: #fff;"><a href="javascript:;"><img class="mui-media-object mui-pull-left" src="'+data[0].goodsListImg+'" width=80 height=80 /><div class="mui-media-body">'+data[0].goodsName+'<p class="mui-ellipsis">剩余<b class="surplus">1609</b>人次</p><p class="mui-ellipsis">参与人数<span class="reduce">-</span><span class="number">10</span><span class="add">+</span></p></div></a></li></ul>';
+							console.log(attr);
+							$(".mui-scroll").append(attr);
+							
+						}else{
+							$("section").html("不好意思！数据丢失了，请访问其他的分类！！！！");
+						}
+						
+							
+					}
+					
+					
+				})
+			}
+	</script>
+</html>
